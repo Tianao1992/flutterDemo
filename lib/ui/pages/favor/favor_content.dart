@@ -7,9 +7,9 @@ class FavorContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<FavorViewModel>(builder: (context, favorVM, child) {
       return ListView.builder(
-          itemCount: favorVM.favors.length,
+          itemCount: favorVM.meals.length,
           itemBuilder: ((context, index) {
-            return MealItem(favorVM.favors[index]);
+            return MealItem(favorVM.meals[index]);
           }));
     });
   }

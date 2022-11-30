@@ -1,6 +1,7 @@
 import 'package:favorcate/core/model/meal_model.dart';
 import 'package:favorcate/core/storage/storage.dart';
 import 'package:favorcate/core/viewmdoel/base_view_model.dart';
+import 'package:favorcate/core/viewmdoel/filter_view_model.dart';
 import 'package:flutter/material.dart';
 
 class FavorViewModel extends BaseMealViewModel {
@@ -11,6 +12,12 @@ class FavorViewModel extends BaseMealViewModel {
   }
   void addMeal(MealModel model) {
     favors.add(model);
+    notifyListeners();
+  }
+
+  @override
+  void updateFilterVM(FilterViewModel vm) {
+    super.updateFilterVM(vm);
     notifyListeners();
   }
 
